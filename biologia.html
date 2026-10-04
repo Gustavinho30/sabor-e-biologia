@@ -1,0 +1,1031 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sabor & Ciência | Panqueca com Pasta de Amendoim</title>
+    <meta name="theme-color" content="#302117">
+    <meta name="description" content="Aprenda a preparar panqueca com pasta de amendoim e descubra a ciência dos alimentos.">
+
+    <!-- FAVICON PERSONALIZADO -->
+    <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23302117'/%3E%3Ccircle cx='50' cy='50' r='39' fill='none' stroke='%23f2a044' stroke-width='4'/%3E%3Cpath d='M28 51 L28 39 Q28 28 39 28 Q43 16 54 23 Q64 16 70 29 Q81 33 77 45 L77 53 Q77 61 67 61 L33 61 Q23 61 28 51Z' fill='none' stroke='%23f2a044' stroke-width='5' stroke-linejoin='round'/%3E%3Cpath d='M39 64 L39 76 L61 76 L61 64 M43 69 L57 69' fill='none' stroke='%23f2a044' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Great+Vibes&display=swap"
+          rel="stylesheet">
+
+    <style>
+        :root {
+            --marrom: #302117;
+            --marrom-claro: #60432e;
+            --laranja: #d98538;
+            --creme: #fffaf2;
+            --bege: #f4eadb;
+            --texto: #45382e;
+            --branco: #ffffff;
+            --verde: #405c31;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--creme);
+            color: var(--texto);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1200px, 90%);
+            margin: auto;
+        }
+
+        /* CABEÇALHO E IDENTIDADE VISUAL */
+
+        header {
+            background: var(--marrom);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 20px #00000020;
+        }
+
+        .navbar {
+            min-height: 88px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            flex-shrink: 0;
+        }
+
+        .brand-logo {
+            width: 62px;
+            height: 62px;
+            border: 2px solid #f2a044;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: #f2a044;
+            font-size: 36px;
+            font-family: Georgia, serif;
+            position: relative;
+        }
+
+        .brand-logo::after {
+            content: "✦";
+            position: absolute;
+            font-family: sans-serif;
+            font-size: 15px;
+            bottom: 5px;
+            right: 9px;
+            background: var(--marrom);
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.65rem;
+            font-weight: 800;
+            line-height: 1.25;
+            white-space: nowrap;
+        }
+
+        .brand-name span {
+            color: #f2a044;
+        }
+
+        .brand-tagline {
+            font-size: 0.72rem;
+            color: #d7c5b4;
+            letter-spacing: 0.6px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 0.88rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #f2ad60;
+        }
+
+        .nav-button {
+            background: var(--laranja);
+            color: var(--marrom);
+            padding: 10px 16px;
+            border-radius: 7px;
+            font-weight: 700;
+        }
+
+        .nav-button:hover {
+            background: #f0aa60;
+            color: var(--marrom);
+        }
+
+        /* DESTAQUE PRINCIPAL */
+
+        .hero {
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            color: white;
+            background:
+                linear-gradient(90deg,
+                rgba(28, 19, 13, 0.96) 0%,
+                rgba(28, 19, 13, 0.80) 40%,
+                rgba(28, 19, 13, 0.12) 100%),
+                url("https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1800&q=85")
+                center 53% / cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 680px;
+            padding: 65px 0;
+        }
+
+        .tag {
+            display: inline-block;
+            color: #f2ad60;
+            border: 1px solid #d98538;
+            border-radius: 30px;
+            padding: 5px 15px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.7rem, 5vw, 4.5rem);
+            line-height: 1.08;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #f2ad60;
+            font-style: italic;
+        }
+
+        .hero p {
+            max-width: 540px;
+            color: #f1e8de;
+            font-size: 1.02rem;
+            margin-bottom: 28px;
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--laranja);
+            color: #24170e;
+            font-weight: 700;
+            padding: 13px 22px;
+            border-radius: 8px;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            background: #f0a75b;
+        }
+
+        .hero-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 30px;
+        }
+
+        .hero-info div {
+            border-left: 2px solid var(--laranja);
+            padding-left: 12px;
+        }
+
+        .hero-info strong {
+            display: block;
+            font-size: 1rem;
+        }
+
+        .hero-info small {
+            color: #e5d5c6;
+        }
+
+        /* TÍTULOS DAS SEÇÕES */
+
+        section {
+            padding: 70px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .eyebrow {
+            color: #b66a28;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 0.78rem;
+        }
+
+        .section-heading h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--marrom);
+            line-height: 1.2;
+            margin: 10px 0 14px;
+        }
+
+        .section-heading p {
+            color: #74675b;
+        }
+
+        /* CARTÕES DA RECEITA */
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 25px;
+            align-items: start;
+        }
+
+        .panel {
+            background: var(--branco);
+            border: 1px solid #eadfd0;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 8px 25px #53351a08;
+        }
+
+        .panel h3 {
+            color: var(--marrom);
+            font-size: 1.35rem;
+            margin-bottom: 8px;
+        }
+
+        .panel-intro {
+            color: #827366;
+            font-size: 0.9rem;
+            margin-bottom: 22px;
+        }
+
+        /* INGREDIENTES SEM CAIXAS DE SELEÇÃO */
+
+        .ingredient-group {
+            margin-bottom: 23px;
+        }
+
+        .ingredient-group h4 {
+            color: #b66a28;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .ingredient {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 11px 0;
+            border-bottom: 1px solid #f0e9df;
+            font-size: 0.92rem;
+        }
+
+        .ingredient:last-child {
+            border-bottom: none;
+        }
+
+        .ingredient > span:first-child {
+            flex-shrink: 0;
+        }
+
+        .ingredient-note {
+            font-size: 0.84rem;
+            color: #74675b;
+            background: var(--bege);
+            padding: 14px;
+            border-radius: 9px;
+            margin-top: 15px;
+        }
+
+        /* MODO DE PREPARO */
+
+        .step {
+            display: flex;
+            gap: 17px;
+            margin-bottom: 25px;
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            min-width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            background: var(--laranja);
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50%;
+        }
+
+        .step h4 {
+            color: var(--marrom);
+            margin-bottom: 4px;
+        }
+
+        .step p {
+            color: #74675b;
+            font-size: 0.91rem;
+        }
+
+        /* BIOLOGIA */
+
+        .biology {
+            background: var(--bege);
+        }
+
+        .biology-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .biology-card {
+            background: white;
+            border-radius: 14px;
+            padding: 26px;
+            border: 1px solid #e9dac8;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .biology-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px #53351a10;
+        }
+
+        .biology-icon {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: #f8ead9;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .biology-card h3 {
+            color: var(--marrom);
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+        }
+
+        .biology-card p {
+            color: #74675b;
+            font-size: 0.91rem;
+        }
+
+        /* INFORMAÇÕES NUTRICIONAIS */
+
+        .nutrition {
+            margin-top: 28px;
+            background: var(--marrom);
+            color: white;
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .nutrition h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7rem;
+            margin-bottom: 8px;
+        }
+
+        .nutrition > p {
+            color: #e4d7c9;
+            font-size: 0.9rem;
+            margin-bottom: 22px;
+        }
+
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .nutrition-item {
+            background: #ffffff12;
+            padding: 18px;
+            border-radius: 10px;
+        }
+
+        .nutrition-item strong {
+            display: block;
+            font-size: 1.1rem;
+            color: #f2ad60;
+            margin-bottom: 5px;
+        }
+
+        .nutrition-item span {
+            font-size: 0.85rem;
+            color: #eee0d1;
+        }
+
+        /* MENSAGEM FINAL */
+
+        .tip {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+            padding: 28px;
+            background: #f8ead9;
+            border-radius: 14px;
+            margin-top: 28px;
+        }
+
+        .tip h3 {
+            color: var(--marrom);
+            margin-bottom: 7px;
+        }
+
+        .tip p {
+            font-size: 0.92rem;
+            color: #74675b;
+        }
+
+        .tip-badge {
+            background: white;
+            color: #98531c;
+            padding: 12px 17px;
+            border-radius: 9px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        /* RODAPÉ */
+
+        footer {
+            background: #241a13;
+            color: #e8d9ca;
+            padding: 35px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .footer-motto {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.5rem;
+            color: #f2ad60;
+        }
+
+        footer p {
+            font-size: 0.83rem;
+        }
+
+        footer .brand-name {
+            font-size: 1.4rem;
+        }
+
+        /* RESPONSIVIDADE PARA TABLETS */
+
+        @media (max-width: 950px) {
+            .navbar {
+                padding: 15px 0;
+                flex-wrap: wrap;
+            }
+
+            nav {
+                gap: 16px;
+                flex-wrap: wrap;
+            }
+
+            .recipe-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .biology-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* RESPONSIVIDADE PARA CELULARES */
+
+        @media (max-width: 600px) {
+            .navbar {
+                justify-content: center;
+            }
+
+            .brand-name {
+                font-size: 1.4rem;
+            }
+
+            .brand-logo {
+                width: 52px;
+                height: 52px;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 13px;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+            }
+
+            .hero {
+                min-height: 520px;
+                background:
+                    linear-gradient(90deg,
+                    rgba(28, 19, 13, 0.92),
+                    rgba(28, 19, 13, 0.72)),
+                    url("https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1000&q=80")
+                    center / cover no-repeat;
+            }
+
+            .hero-content {
+                padding: 50px 0;
+            }
+
+            .hero-info {
+                gap: 16px;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            .panel {
+                padding: 21px;
+            }
+
+            .biology-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nutrition-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .tip {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO COM LOGO -->
+    <header>
+        <div class="container navbar">
+
+            <a href="#inicio" class="brand"
+               aria-label="Sabor e Ciência - Início">
+
+                <div class="brand-logo" aria-hidden="true">
+                    ♧
+                </div>
+
+                <div>
+                    <div class="brand-name">
+                        Sabor <span>&</span> Biologia
+                    </div>
+
+                    <div class="brand-tagline">
+                        RECEITAS QUE NUTREM O CORPO E A MENTE
+                    </div>
+                </div>
+
+            </a>
+
+            <nav aria-label="Navegação principal">
+                <a href="#inicio">Início</a>
+                <a href="#ingredientes">Ingredientes</a>
+                <a href="#preparo">Preparo</a>
+                <a href="#biologia">Biologia</a>
+                <a href="#nutricao" class="nav-button">Nutrição</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- APRESENTAÇÃO DA RECEITA -->
+        <section class="hero" id="inicio">
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <span class="tag">✦ RECEITA E BIOLOGIA</span>
+
+                    <h1>
+                        Panqueca com<br>
+                        <span>Pasta de Amendoim</span>
+                    </h1>
+
+                    <p>
+                        Sabor, energia e nutrição em uma só receita!
+                        Aprenda a preparar essa panqueca deliciosa e
+                        descubra como os ingredientes contribuem para
+                        o funcionamento do organismo.
+                    </p>
+
+                    <a href="#ingredientes" class="button">
+                        Descobrir a receita &rarr;
+                    </a>
+
+                    <div class="hero-info">
+
+                        <div>
+                            <strong>15–20 min</strong>
+                            <small>Tempo de preparo</small>
+                        </div>
+
+                        <div>
+                            <strong>2 porções</strong>
+                            <small>Rendimento estimado</small>
+                        </div>
+
+                        <div>
+                            <strong>Fácil</strong>
+                            <small>Dificuldade</small>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- INGREDIENTES E MODO DE PREPARO -->
+        <section>
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">Mãos à obra</span>
+                    <h2>Prepare sua receita</h2>
+                    <p>
+                        Conheça os ingredientes utilizados e acompanhe
+                        o passo a passo para preparar uma deliciosa
+                        panqueca com pasta de amendoim.
+                    </p>
+                </div>
+
+                <div class="recipe-grid">
+
+                    <!-- INGREDIENTES: APENAS LISTA INFORMATIVA -->
+                    <article class="panel" id="ingredientes">
+
+                        <h3>Ingredientes utilizados</h3>
+
+                        <p class="panel-intro">
+                            Quantidades para aproximadamente 2 porções.
+                        </p>
+
+                        <div class="ingredient-group">
+
+                            <h4>Para a massa</h4>
+
+                            <div class="ingredient">
+                                <span>🍌</span>
+                                <span>1 banana madura</span>
+                            </div>
+
+                            <div class="ingredient">
+                                <span>🥚</span>
+                                <span>1 ovo</span>
+                            </div>
+
+                            <div class="ingredient">
+                                <span>🌾</span>
+                                <span>4 colheres de sopa de aveia</span>
+                            </div>
+
+                            <div class="ingredient">
+                                <span>🥄</span>
+                                <span>1 colher de chá de fermento químico</span>
+                            </div>
+
+                            <div class="ingredient">
+                                <span>✨</span>
+                                <span>Canela a gosto (opcional)</span>
+                            </div>
+
+                        </div>
+
+                        <div class="ingredient-group">
+
+                            <h4>Para a cobertura</h4>
+
+                            <div class="ingredient">
+                                <span>🥜</span>
+                                <span>2 colheres de sopa de pasta de amendoim</span>
+                            </div>
+
+                            <div class="ingredient">
+                                <span>🥛</span>
+                                <span>1 a 2 colheres de sopa de leite ou água, para ajustar a consistência</span>
+                            </div>
+
+    
+                        </div>
+
+                        <div class="ingredient-note">
+                            <strong>Observação:</strong>
+                            a canela e as rodelas de banana são opcionais.
+                            A receita pode ser preparada sem esses
+                            complementos.
+                        </div>
+
+                    </article>
+
+                    <!-- MODO DE PREPARO -->
+                    <article class="panel" id="preparo">
+
+                        <h3>Modo de preparo</h3>
+
+                        <p class="panel-intro">
+                            Siga as etapas para preparar a receita.
+                        </p>
+
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div>
+                                <h4>Amasse a banana</h4>
+                                <p>
+                                    Em uma tigela, amasse a banana
+                                    com um garfo até formar um purê.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div>
+                                <h4>Prepare a massa</h4>
+                                <p>
+                                    Acrescente o ovo e a aveia.
+                                    Misture até obter uma massa uniforme.
+                                    Adicione a canela, se desejar,
+                                    e incorpore o fermento por último.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div>
+                                <h4>Aqueça a frigideira</h4>
+                                <p>
+                                    Aqueça uma frigideira antiaderente
+                                    em fogo baixo. Unte levemente,
+                                    se necessário.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div>
+                                <h4>Asse as panquecas</h4>
+                                <p>
+                                    Coloque pequenas porções da massa.
+                                    Cozinhe por cerca de 2 a 3 minutos
+                                    de cada lado, até dourar e cozinhar
+                                    completamente por dentro.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">5</div>
+                            <div>
+                                <h4>Prepare a cobertura</h4>
+                                <p>
+                                    Misture a pasta de amendoim com
+                                    um pouco de leite ou água até
+                                    obter uma consistência cremosa.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">6</div>
+                            <div>
+                                <h4>Monte e sirva</h4>
+                                <p>
+                                    Espalhe a pasta de amendoim sobre
+                                    as panquecas.
+                                </p>
+                            </div>
+                        </div>
+
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTEÚDO DE BIOLOGIA -->
+        <section class="biology" id="biologia">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">A ciência no prato</span>
+                    <h2>A Biologia na alimentação</h2>
+                    <p>
+                        Cada ingrediente contém nutrientes que
+                        participam de diferentes processos do corpo.
+                    </p>
+                </div>
+
+                <div class="biology-grid">
+
+                    <article class="biology-card">
+                        <div class="biology-icon">🍌</div>
+                        <h3>Carboidratos e energia</h3>
+                        <p>
+                            A banana e a aveia fornecem carboidratos
+                            utilizados pelas células para produzir
+                            energia. A aveia também contém fibras,
+                            que contribuem para o funcionamento
+                            intestinal.
+                        </p>
+                    </article>
+
+                    <article class="biology-card">
+                        <div class="biology-icon">🧬</div>
+                        <h3>Proteínas e células</h3>
+                        <p>
+                            O ovo, a aveia e o amendoim contêm
+                            proteínas, nutrientes importantes para
+                            a formação e manutenção dos tecidos
+                            e para a produção de enzimas.
+                        </p>
+                    </article>
+
+                    <article class="biology-card">
+                        <div class="biology-icon">🥜</div>
+                        <h3>Gorduras e funções vitais</h3>
+                        <p>
+                            A pasta de amendoim fornece lipídios,
+                            incluindo gorduras insaturadas. Eles
+                            participam da estrutura das membranas
+                            celulares e fornecem energia ao organismo.
+                        </p>
+                    </article>
+
+                </div>
+
+                <!-- INFORMAÇÕES NUTRICIONAIS -->
+                <div class="nutrition" id="nutricao">
+
+                    <h3>Informações nutricionais</h3>
+
+                    <p>
+                        Os valores dependem das quantidades, das marcas
+                        e do tamanho das porções. Abaixo, apresentamos
+                        as principais funções dos nutrientes presentes
+                        nos ingredientes.
+                    </p>
+
+                    <div class="nutrition-grid">
+
+                        <div class="nutrition-item">
+                            <strong>Energia</strong>
+                            <span>Carboidratos e lipídios</span>
+                        </div>
+
+                        <div class="nutrition-item">
+                            <strong>Proteínas</strong>
+                            <span>Formação e manutenção dos tecidos</span>
+                        </div>
+
+                        <div class="nutrition-item">
+                            <strong>Fibras</strong>
+                            <span>Funcionamento intestinal</span>
+                        </div>
+
+                        <div class="nutrition-item">
+                            <strong>Minerais</strong>
+                            <span>Diversas funções do organismo</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- MENSAGEM FINAL -->
+                <div class="tip">
+
+                    <div>
+                        <h3>Alimentação + Conhecimento = Bem-estar</h3>
+                        <p>
+                            Entender os alimentos é uma forma de
+                            compreender a relação entre nutrição,
+                            células e funcionamento do corpo humano.
+                        </p>
+                    </div>
+
+                    <span class="tip-badge">
+                        Sabor & Biologia ✦
+                    </span>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <div class="container footer-content">
+
+            <a href="#inicio" class="brand">
+
+                <div class="brand-logo" aria-hidden="true">
+                    ♧
+                </div>
+
+                <div>
+                    <div class="brand-name">
+                        Sabor <span>&</span> Biologia
+
+                    <div class="brand-tagline">
+                        RECEITAS QUE NUTREM O CORPO E A MENTE
+                    </div>
+                </div>
+
+            </a>
+
+            <p class="footer-motto">
+                Alimentação + Conhecimento = Bem-estar
+            </p>
+
+            <p>
+                Projeto educativo de Biologia.<br>
+                © 2026 Lipidio
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
